@@ -51,11 +51,13 @@ export default MenuBar;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 0,
     flexDirection: "row",
     marginTop: 25,
     paddingBottom: 10,
     borderBottomColor: "#1f1f1f",
     borderBottomWidth: 1,
+    justifyContent: "space-between",
   },
   buttonContainer: {
     padding: 10,
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 12,
     paddingTop: 10,
-    fontWeight: 10,
+    fontWeight: "100",
   },
 
   buttonIconContainer: {
