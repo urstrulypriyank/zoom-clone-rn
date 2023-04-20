@@ -4,6 +4,7 @@ import React from "react";
 const contacts = [
   {
     type: "starred",
+    name: "starred",
   },
   {
     type: "contact",
@@ -29,28 +30,23 @@ const ContactSection = () => {
         <TouchableOpacity key={index}>
           <View style={styles.row} key={index}>
             {data.type == "starred" ? (
-              <>
-                <View style={styles.starIcon}>
-                  <AntDesign name="star" size={30} color="#efefef" />
-                </View>
-                <Text style={styles.text}>{data.type}</Text>
-              </>
+              <View style={styles.starIcon}>
+                <AntDesign name="star" size={30} color="#efefef" />
+              </View>
             ) : (
-              <>
-                <View style={styles.starIcon}>
-                  {/* <Image name="star" size={30} color="#efefef" /> */}
-                  <Image
-                    source={data.photo}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      resizeMode: "contain",
-                    }}
-                  />
-                </View>
-                <Text style={styles.text}>{data.name}</Text>
-              </>
+              <View style={styles.starIcon}>
+                {/* <Image name="star" size={30} color="#efefef" /> */}
+                <Image
+                  source={data.photo}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    resizeMode: "contain",
+                  }}
+                />
+              </View>
             )}
+            <Text style={styles.text}>{data.name}</Text>
           </View>
         </TouchableOpacity>
       ))}
