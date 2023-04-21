@@ -25,7 +25,11 @@ const items = [
   },
 ];
 
-const MenuBar = () => {
+const MenuBar = ({ navigation }) => {
+  const openMeeting = () => {
+    navigation.navigate("Room");
+  };
+
   return (
     <View style={styles.container}>
       {/* first one */}
@@ -33,6 +37,9 @@ const MenuBar = () => {
       {items.map((item) => (
         <View style={styles.buttonContainer} key={item.id}>
           <TouchableOpacity
+            onPress={() => {
+              openMeeting();
+            }}
             style={[
               styles.buttonIconContainer,
               item.id != 1 ? { backgroundColor: "blue" } : "",

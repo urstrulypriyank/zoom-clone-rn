@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View , StatusBar } from "react-native";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native";
 // import { StatusBar } from "expo-status-bar";
 import Header from "../components/Headder";
@@ -9,13 +9,13 @@ import SearchBar from "../components/SearchBar";
 
 // console.log(StatusBar.currentHeight);
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeareaview}>
         <Header />
         <SearchBar />
-        <MenuBar />
+        <MenuBar navigation={navigation} />
         <ContactSection />
       </SafeAreaView>
     </View>
