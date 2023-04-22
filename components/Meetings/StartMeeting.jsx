@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-const StartMeeting = ({ name, setName, roomId, setRoomId }) => {
+const StartMeeting = ({ name, setName, roomId, setRoomId, joinRoom }) => {
   return (
     <View style={styles.MeetingContainer}>
       <View style={styles.info}>
@@ -21,7 +21,7 @@ const StartMeeting = ({ name, setName, roomId, setRoomId }) => {
       <View style={styles.info}>
         <TextInput
           style={styles.textInput}
-          value={name}
+          value={roomId}
           onChangeText={(text) => setRoomId(text)}
           placeholder="Enter Room Id"
           placeholderTextColor="gray"
@@ -29,7 +29,7 @@ const StartMeeting = ({ name, setName, roomId, setRoomId }) => {
       </View>
       {/* button Section */}
       <View>
-        <TouchableOpacity onPress={() => {}} style={styles.button}>
+        <TouchableOpacity onPress={() => joinRoom()} style={styles.button}>
           <Text style={styles.buttonText}>Start meeting</Text>
         </TouchableOpacity>
       </View>
